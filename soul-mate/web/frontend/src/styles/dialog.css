@@ -1,0 +1,72 @@
+/* ── Dangerous action confirm dialog ── */
+.dialog-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 5, 12, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: max(var(--space-4), env(safe-area-inset-top)) max(var(--space-4), env(safe-area-inset-right)) max(var(--space-4), env(safe-area-inset-bottom)) max(var(--space-4), env(safe-area-inset-left));
+  z-index: 200;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.dialog-panel {
+  background: var(--color-bg-elevated);
+  border: 1px solid var(--color-border-strong);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  max-width: 440px;
+  width: 100%;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+  max-height: calc(100vh - 2 * var(--space-4));
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+.admin-route .dialog-overlay {
+  background: color-mix(in srgb, var(--color-bg) 54%, rgba(5, 5, 12, 0.64));
+  backdrop-filter: blur(12px) saturate(120%);
+  -webkit-backdrop-filter: blur(12px) saturate(120%);
+}
+.admin-route .dialog-panel {
+  border-color: var(--glass-border);
+  background: var(--glass-overlay);
+  box-shadow: var(--glass-shadow-float), inset 0 1px var(--glass-highlight);
+  backdrop-filter: blur(var(--glass-blur-overlay)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur-overlay)) saturate(var(--glass-saturation));
+}
+.dialog-danger {
+  border-color: rgba(244, 91, 105, 0.35);
+}
+.dialog-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.dialog-impact {
+  font-size: 0.82rem;
+  color: var(--color-text-secondary);
+  margin-top: var(--space-2);
+  line-height: 1.6;
+}
+.dialog-field-label {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--color-text-secondary);
+  margin: var(--space-4) 0 var(--space-1);
+}
+.dialog-textarea,
+.dialog-input {
+  width: 100%;
+}
+.dialog-error {
+  color: var(--color-danger);
+  font-size: 0.78rem;
+  margin-top: var(--space-2);
+}
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  margin-top: var(--space-5);
+}

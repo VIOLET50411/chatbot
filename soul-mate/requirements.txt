@@ -1,0 +1,33 @@
+# Soul Mate · Python 依赖
+# Python 3.11+
+
+# LLM & Embedding
+openai==1.57.0              # DeepSeek 兼容 OpenAI SDK
+sentence-transformers==5.6.0 # Docker 内本地 BGE-M3 dense embedding
+
+# 向量数据库
+chromadb==0.5.23
+# Linux/CentOS 上系统 sqlite3 可能过旧，ChromaDB 需要 pysqlite3-binary 垫片
+pysqlite3-binary==0.5.3; platform_system != "Windows"
+# 后端框架
+fastapi==0.115.6
+uvicorn[standard]==0.32.1
+aiofiles==24.1.0            # FastAPI StaticFiles 依赖
+
+# 任务调度
+apscheduler==3.10.4
+
+# 数据库
+aiosqlite==0.20.0
+
+# 工具
+pydantic==2.10.3
+python-dotenv==1.0.1
+pyyaml==6.0.2
+httpx==0.28.1              # 视觉等 OpenAI-compatible HTTP 调用
+Pillow==11.1.0             # 微信小尺寸截图放大与 OCR 预处理
+tiktoken==0.8.0            # Token 计数
+
+# 并发
+anyio==4.7.0
+cryptography==46.0.7

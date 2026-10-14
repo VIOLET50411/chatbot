@@ -1,0 +1,21 @@
+# Soul Mate · 运行时配置
+
+reply_policy:
+  cold_reply_enabled: true
+  resentment_ignore_threshold: 70
+  resentment_cold_threshold: 60
+  shallow_relationship_ignore_probability: 0.0
+
+token_budget:
+  global_runtime_prompt: 800
+  character_runtime_prompt: 600
+  owner_profile: 800
+  external_information: 900
+  system_persona: 1200
+  current_state: 300
+  profile: 500
+  memories: 1200
+  recent_summary: 800
+  history: 3000
+  style_guide: 400
+  current_msg: 500

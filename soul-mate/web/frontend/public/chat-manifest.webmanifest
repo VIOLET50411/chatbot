@@ -1,0 +1,31 @@
+{
+  "name": "Soul Mate 对话",
+  "short_name": "Soul Mate 对话",
+  "id": "/chat",
+  "start_url": "/chat",
+  "scope": "/chat",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#eee8df",
+  "theme_color": "#eee8df",
+  "icons": [
+    {
+      "src": "/static/icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/static/pwa-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/static/pwa-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}

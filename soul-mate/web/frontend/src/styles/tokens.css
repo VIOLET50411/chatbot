@@ -1,0 +1,127 @@
+/*
+ * Soul Mate 视觉令牌：暖沙色工作台 + 琥珀强调色。
+ * 全部手写 CSS 变量，不引入 UI 组件库依赖。
+ */
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Segoe UI', 'PingFang SC', 'Microsoft YaHei', system-ui, sans-serif;
+
+  --color-bg: #f5f0e8;
+  --color-bg-elevated: #fffaf2;
+  --color-bg-card: #fffdf8;
+  --color-bg-hover: #f0e8dc;
+  --color-border: rgba(91, 73, 52, 0.14);
+  --color-border-strong: rgba(91, 73, 52, 0.24);
+
+  --color-text: #2d2924;
+  --color-text-secondary: #70685f;
+  --color-text-tertiary: #9a9185;
+
+  --color-accent: #b87b32;
+  --color-accent-strong: #8f5c20;
+  --color-accent-bg: rgba(184, 123, 50, 0.14);
+  --color-accent-warm: #d8a15f;
+
+  --glass-nav: rgba(255, 252, 246, 0.78);
+  --glass-card: rgba(255, 252, 246, 0.74);
+  --glass-overlay: rgba(255, 252, 246, 0.92);
+  --glass-border: rgba(255, 255, 255, 0.82);
+  --glass-highlight: rgba(255, 255, 255, 0.9);
+  --glass-blur-nav: 24px;
+  --glass-blur-card: 18px;
+  --glass-blur-overlay: 30px;
+  --glass-saturation: 145%;
+  --glass-shadow-nav: 8px 0 34px rgba(93, 70, 38, 0.08);
+  --glass-shadow-float: 0 14px 40px rgba(93, 70, 38, 0.13);
+  --glass-shadow-card: 0 10px 28px rgba(93, 70, 38, 0.09);
+  --motion-fast: 180ms;
+  --motion-medium: 260ms;
+  --motion-ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --motion-spring: cubic-bezier(0.2, 0.85, 0.25, 1.16);
+
+  --color-positive: #587c63;
+  --color-positive-bg: rgba(88, 124, 99, 0.14);
+  --color-warning: #b8792c;
+  --color-warning-bg: rgba(184, 121, 44, 0.14);
+  --color-danger: #a8544b;
+  --color-danger-bg: rgba(168, 84, 75, 0.14);
+  --color-info: #65788a;
+  --color-info-bg: rgba(101, 120, 138, 0.14);
+
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  --shell-sidebar-width: 248px;
+
+  --focus-ring: 0 0 0 3px rgba(184, 123, 50, 0.32);
+}
+
+/* 明亮主题：遵循系统偏好，也可通过 data-theme 手动切换 */
+@media (prefers-color-scheme: light) {
+  :root {
+    --color-bg: #f5f0e8;
+    --color-bg-elevated: #fffaf2;
+    --color-bg-card: #fffdf8;
+    --color-bg-hover: #f0e8dc;
+    --color-border: rgba(91, 73, 52, 0.14);
+    --color-border-strong: rgba(91, 73, 52, 0.24);
+    --color-text: #2d2924;
+    --color-text-secondary: #70685f;
+    --color-text-tertiary: #9a9185;
+    --color-accent: #b87b32;
+    --color-accent-strong: #8f5c20;
+    --color-accent-bg: rgba(184, 123, 50, 0.14);
+    --glass-nav: rgba(255, 252, 246, 0.78);
+    --glass-card: rgba(255, 252, 246, 0.74);
+    --glass-overlay: rgba(255, 252, 246, 0.92);
+    --glass-border: rgba(255, 255, 255, 0.82);
+    --glass-highlight: rgba(255, 255, 255, 0.9);
+  }
+}
+
+[data-theme='light'] {
+  --color-bg: #f5f0e8;
+  --color-bg-elevated: #fffaf2;
+  --color-bg-card: #fffdf8;
+  --color-bg-hover: #f0e8dc;
+  --color-border: rgba(91, 73, 52, 0.14);
+  --color-border-strong: rgba(91, 73, 52, 0.24);
+  --color-text: #2d2924;
+  --color-text-secondary: #70685f;
+  --color-text-tertiary: #9a9185;
+  --color-accent: #b87b32;
+  --color-accent-strong: #8f5c20;
+  --color-accent-bg: rgba(184, 123, 50, 0.14);
+  --glass-nav: rgba(255, 252, 246, 0.78);
+  --glass-card: rgba(255, 252, 246, 0.74);
+  --glass-overlay: rgba(255, 252, 246, 0.92);
+  --glass-border: rgba(255, 255, 255, 0.82);
+  --glass-highlight: rgba(255, 255, 255, 0.9);
+}
+
+[data-theme='dark'] {
+  --color-bg: #2b2925;
+  --color-bg-elevated: #37332d;
+  --color-bg-card: #403b34;
+  --color-bg-hover: #4a443b;
+  --color-border: rgba(255, 249, 232, 0.12);
+  --color-border-strong: rgba(255, 249, 232, 0.22);
+  --color-text: #fff8e9;
+  --color-text-secondary: #d9cdb8;
+  --color-text-tertiary: #a99d89;
+  --color-accent: #e0a655;
+  --color-accent-strong: #f0bd72;
+  --color-accent-bg: rgba(224, 166, 85, 0.18);
+  --glass-nav: rgba(55, 51, 45, 0.84);
+  --glass-card: rgba(64, 59, 52, 0.84);
+  --glass-overlay: rgba(64, 59, 52, 0.94);
+  --glass-border: rgba(255, 249, 232, 0.18);
+  --glass-highlight: rgba(255, 249, 232, 0.16);
+}

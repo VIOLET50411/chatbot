@@ -1,0 +1,66 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+*.egg
+.eggs/
+
+# Virtual environments
+.venv*/
+venv*/
+ENV/
+
+# === Node / Frontend ===
+node_modules/
+.pnp
+.pnp.js
+dist/
+build/
+.next/
+out/
+
+# === Data & Models (large files) ===
+soul-mate/data/models/
+soul-mate/data/chroma/
+soul-mate/data/corpus/
+soul-mate/data/gewechat/
+soul-mate/data/logs/
+soul-mate/data/platform/
+
+# === Backups (very large) ===
+backups/
+soul-mate/backups/
+
+# === Logs & Output ===
+*.log
+soul-mate/logs/
+soul-mate/output/
+soul-mate/wxauto_logs/
+soul-mate/host-data/
+
+# === Environment & Secrets ===
+.env
+.env.local
+.env.*.local
+
+# === OS files ===
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# === IDE ===
+.vscode/
+.idea/
+
+# === Playwright ===
+.playwright-cli/
+soul-mate/.playwright-cli/
+
+# === Pytest ===
+.pytest_cache/
+
+# === Misc ===
+.superpowers/

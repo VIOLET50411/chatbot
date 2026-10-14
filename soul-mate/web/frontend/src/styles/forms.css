@@ -1,0 +1,79 @@
+/* ── Buttons ── */
+.btn {
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-4);
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: opacity 0.15s, background 0.15s, transform 0.08s;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  touch-action: manipulation;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.btn-primary {
+  background: var(--color-accent);
+  color: #fff;
+}
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-accent-strong);
+}
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text-secondary);
+}
+.btn-ghost:hover:not(:disabled) {
+  color: var(--color-text);
+  background: var(--color-bg-hover);
+}
+.btn-danger {
+  background: var(--color-danger-bg);
+  color: var(--color-danger);
+  border: 1px solid rgba(244, 91, 105, 0.3);
+}
+.btn-danger:hover:not(:disabled) {
+  background: rgba(244, 91, 105, 0.24);
+}
+.btn-sm {
+  padding: 5px 12px;
+  font-size: 0.78rem;
+}
+
+/* ── Inputs ── */
+input,
+textarea,
+select {
+  background: var(--color-bg);
+  border: 1px solid var(--color-border-strong);
+  color: var(--color-text);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-family: inherit;
+  width: 100%;
+  min-height: 44px;
+}
+textarea {
+  resize: vertical;
+  min-height: 64px;
+}
+input::placeholder,
+textarea::placeholder {
+  color: var(--color-text-tertiary);
+}
+
+.inline-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  margin: var(--space-3) 0 var(--space-4);
+}

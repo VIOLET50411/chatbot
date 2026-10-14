@@ -1,0 +1,28 @@
+/* Shared admin glass surfaces. Keep long-form content on opaque surfaces. */
+.admin-glass-surface {
+  border: 1px solid var(--glass-border);
+  background: var(--glass-card);
+  box-shadow: inset 0 1px var(--glass-highlight), var(--glass-shadow-float);
+  backdrop-filter: blur(var(--glass-blur-nav)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur-nav)) saturate(var(--glass-saturation));
+}
+
+.admin-glass-overlay {
+  border: 1px solid var(--glass-border);
+  background: var(--glass-overlay);
+  box-shadow: inset 0 1px var(--glass-highlight), var(--glass-shadow-float);
+  backdrop-filter: blur(var(--glass-blur-overlay)) saturate(var(--glass-saturation));
+  -webkit-backdrop-filter: blur(var(--glass-blur-overlay)) saturate(var(--glass-saturation));
+}
+
+@supports not ((backdrop-filter: blur(1px))) {
+  .admin-glass-surface,
+  .admin-glass-overlay,
+  .admin-app-shell .sidebar,
+  .admin-bottom-nav { background: var(--color-bg-elevated); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .admin-glass-surface,
+  .admin-glass-overlay { scroll-behavior: auto; }
+}

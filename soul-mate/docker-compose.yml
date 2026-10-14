@@ -1,0 +1,37 @@
+name: soul-mate
+
+services:
+  core:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: soul-mate-core
+    env_file:
+      - .env
+      - runtime-defaults.env
+    environment:
+      DATA_DIR: /app/data
+      CHARACTER_REGISTRY_DIR: /app/data/registry
+      HF_HOME: /app/data/models/huggingface
+      SENTENCE_TRANSFORMERS_HOME: /app/data/models/sentence-transformers
+      PYTHONUTF8: "1"
+    volumes:
+      - type: bind
+        source: ./data
+        target: /app/data
+    ports:
+      # 默认允许同一局域网内的 iPhone 打开 /chat；管理台和 PWA 各自受认证保护。
+      - "${SOUL_MATE_BIND_ADDRESS:-0.0.0.0}:8080:8080"
+    init: true
+    restart: unless-stopped
+    stop_grace_period: 30s
+    healthcheck:
+      test:
+        - CMD
+        - python
+        - -c
+        - "import json,urllib.request; r=urllib.request.urlopen('http://127.0.0.1:8080/healthz', timeout=3); assert r.status == 200 and json.load(r).get('status') == 'ok'"
+      interval: 20s
+      timeout: 5s
+      start_period: 90s
+      retries: 5
